@@ -22,15 +22,6 @@ const nextConfig = {
       // ],
     };
   },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/docs",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 const withNextra = nextra({

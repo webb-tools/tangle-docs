@@ -1,15 +1,17 @@
-import "../styles.css";
-import "../custom.css";
-import { SSRProvider } from "@react-aria/ssr";
-import type { AppProps } from "next/app";
-import type { ReactNode } from "react";
 import "katex/dist/katex.min.css";
+import type { NextPage } from "next";
 import PlausibleProvider from "next-plausible";
+import type { AppProps } from "next/app";
+import type { ReactElement, ReactNode } from "react";
+import "../custom.css";
+import "../styles.css";
+
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
 
 type NextraAppProps = AppProps & {
-  Component: AppProps["Component"] & {
-    getLayout: (page: ReactNode) => ReactNode;
-  };
+  Component: NextPageWithLayout;
 };
 
 // Shim requestIdleCallback in Safari
@@ -26,30 +28,28 @@ export default function Nextra({ Component, pageProps }: NextraAppProps) {
 
   return (
     <PlausibleProvider domain="docs.tangle.tools">
-      <SSRProvider>
-        <svg height="0px" width="0px" style={{ position: "absolute" }}>
-          {" "}
-          {/* Adjust style as needed */}
-          <defs>
-            <linearGradient
-              id="pink-gradient"
-              x1="0%"
-              y1="0%"
-              x2="100%"
-              y2="100%"
-            >
-              <stop offset="0%" stopColor="rgba(156, 81, 161, 1)" />
-              <stop offset="70%" stopColor="rgba(255, 30, 86, 1)" />
-            </linearGradient>
-          </defs>
-        </svg>
+      <svg height="0px" width="0px" style={{ position: "absolute" }}>
+        {" "}
+        {/* Adjust style as needed */}
+        <defs>
+          <linearGradient
+            id="pink-gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stopColor="rgba(156, 81, 161, 1)" />
+            <stop offset="70%" stopColor="rgba(255, 30, 86, 1)" />
+          </linearGradient>
+        </defs>
+      </svg>
 
-        {getLayout(
-          <>
-            <Component {...pageProps} />
-          </>
-        )}
-      </SSRProvider>
+      {getLayout(
+        <>
+          <Component {...pageProps} />
+        </>
+      )}
     </PlausibleProvider>
   );
 }

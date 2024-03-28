@@ -34,6 +34,16 @@ const theme = {
     const fullUrl =
       router.asPath === "/" ? SITE_ROOT : `${SITE_ROOT}${router.asPath}`;
 
+    const { frontMatter } = useConfig();
+
+    // Set default values for title and description
+    const defaultTitle = "Tangle Tools Documentation";
+    const defaultDescription = "Comprehensive documentation for Tangle Tools";
+
+    // Get the title and description from the front matter, or use the default values
+    const title = frontMatter.title || defaultTitle;
+    const description = frontMatter.description || defaultDescription;
+
     return (
       <>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -65,9 +75,12 @@ const theme = {
         <meta name="twitter:card" content="summary_medium_image" />
         <meta name="twitter:site" content="@tangle_network" />
         <meta name="twitter:creator" content="@webbprotocol" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={fullUrl} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <link rel="canonical" href={fullUrl} />
+        <meta property="og:type" content="website" />
         <meta
           property="twitter:image"
           content="https://assets-global.website-files.com/6494562b44a28080aafcbad4/6494599436915879aa403230_Tangle%20Logo.png"
@@ -86,6 +99,15 @@ const theme = {
     text: "Edit this page on GitHub",
   },
   sidebar: {
+    titleComponent({ title, type }) {
+      if (type === "separator") {
+        return <div style={{ fontWeight: 600 }}>{title}</div>;
+      }
+      if (title === "Introduction") {
+        return <>❓ {title}</>;
+      }
+      return <>➖ {title}</>;
+    },
     defaultMenuCollapseLevel: 1,
   },
   navbar: {

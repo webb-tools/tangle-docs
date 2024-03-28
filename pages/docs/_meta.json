@@ -1,54 +1,78 @@
 {
+  "-- Introduction": {
+    "type": "separator",
+    "title": "Introduction"
+  },
   "index": {
     "title": "Overview",
-    "type": "doc"
-  },
-  "launch": {
-    "title": "Network Launch",
-    "type": "doc"
-  },
-  "claim-airdrop": {
-    "title": "Airdrop Claim Guide",
-    "type": "doc"
-  },
-  "tokenomics": {
-    "title": "Tokenomics",
     "type": "doc"
   },
   "usecases": {
     "title": "Use Cases",
     "type": "doc"
   },
-  "services": {
-    "title": "Services",
+  "launch": {
+    "title": "Network Launch",
     "type": "doc"
+  },
+  "use": {
+    "title": "Account Management",
+    "type": "doc"
+  },
+  "claim-airdrop": {
+    "title": "Claiming Tokens",
+    "type": "doc"
+  },
+  "-- Economics": {
+    "type": "separator",
+    "title": "Economics"
+  },
+  "tokenomics": {
+    "title": "Tokenomics",
+    "type": "doc"
+  },
+  "services": {
+    "title": "Restaking",
+    "type": "doc"
+  },
+  "-- Development": {
+    "type": "separator",
+    "title": "Application Development"
   },
   "network-information-configuration": {
     "title": "Network Configuration",
     "type": "doc"
   },
   "build": {
-    "title": "Build",
+    "title": "Develop",
+    "type": "doc"
+  },
+  "-- Node Operation": {
+    "type": "separator",
+    "title": "Staking and Node Operation"
+  },
+  "staking-intro": {
+    "title": "Staking",
     "type": "doc"
   },
   "node": {
-    "title": "Node",
+    "title": "Node Operation",
     "type": "doc"
   },
-  "use": {
-    "title": "Basics",
-    "type": "doc"
+  "-- Governance": {
+    "type": "separator",
+    "title": "Governance"
   },
   "governance": {
-    "title": "Govern",
+    "title": "Voting and Proposing",
     "type": "doc"
+  },
+  "-- Resources": {
+    "type": "separator",
+    "title": "Resources"
   },
   "community": {
     "title": "Community",
-    "type": "doc"
-  },
-  "faq": {
-    "title": "FAQ",
     "type": "doc"
   },
   "glossary": {
