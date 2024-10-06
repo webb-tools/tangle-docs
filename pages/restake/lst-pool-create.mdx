@@ -1,6 +1,6 @@
 ## Introduction to Liquid Staking Pools
 
-A **liquid staking pool** on the Tangle Network is a collective staking mechanism that allows users to pool their assets together to participate in staking. These pools enable participants to earn staking rewards while maintaining liquidity through tokenized derivatives. The primary purpose of a staking pool is to lower the barriers to entry for staking, allowing users with smaller token holdings to stake and earn rewards without having to operate a validator themselves.
+A **liquid staking pool** on the Tangle network is a collective staking mechanism that allows users to pool their assets together to participate in staking. These pools enable participants to earn staking rewards while maintaining liquidity through tokenized derivatives. The primary purpose of a staking pool is to lower the barriers to entry for staking, allowing users with smaller token holdings to stake and earn rewards without having to operate a validator themselves.
 
 ## How a Liquid Staking Pool Works
 
@@ -55,8 +55,8 @@ There are several key roles involved in creating and maintaining a liquid stakin
 
 ### 4. **Increased Security and Decentralization**
 
-- **Benefit:** By creating a liquid staking pool, you contribute to the overall security and decentralization of the Tangle Network. Larger pools with more participants help secure the network by distributing stake across multiple validators.
-- **Impact:** A decentralized network is more secure and resilient, benefiting the entire ecosystem. As a pool creator, you play a role in strengthening the Tangle Network’s security and robustness.
+- **Benefit:** By creating a liquid staking pool, you contribute to the overall security and decentralization of the Tangle network. Larger pools with more participants help secure the network by distributing stake across multiple validators.
+- **Impact:** A decentralized network is more secure and resilient, benefiting the entire ecosystem. As a pool creator, you play a role in strengthening the Tangle network’s security and robustness.
 
 ## Risks of Creating and Managing a Pool
 
@@ -70,32 +70,53 @@ There are several key roles involved in creating and maintaining a liquid stakin
 - **Risk:** Pools can be targeted by malicious actors who seek to exploit vulnerabilities in pool management or validator selection.
 - **Mitigation:** Pool operators should implement strong security practices, such as regularly auditing pool operations, ensuring proper governance mechanisms, and closely monitoring participant behavior.
 
+## How to Create a Liquid Staking Pool Using Tangle Dapp
+
+Creating a liquid staking pool on the Tangle network using Tangle Dapp is a straightforward process. Follow these steps:
+
+### Step 1: Access Tangle Dapp & Connect Wallet
+
+- Open [Tangle Dapp's Liquid Staking page](https://app.tangle.tools/liquid-staking).
+- Connect to the desired Tangle network by selecting the appropriate network from the dropdown list. Note that liquid staking pools are only available on the networks in which they are created.
+
+![Selecting a Liquid Staking Network](../../images/liquid-staking/select-ls-network.png)
+
 ## How to Create a Liquid Staking Pool Using PolkadotJS
 
-Creating a liquid staking pool on the Tangle Network using PolkadotJS is a straightforward process. Follow these steps:
+In case that you'd like to use the PolkadotJS UI, follow these steps to create a liquid staking pool:
 
 ### Step 1: Access the PolkadotJS Interface
 
 - Open [PolkadotJS Apps](https://polkadot.js.org/apps/).
-- Connect to the Tangle Network by selecting the appropriate network from the dropdown list.
+- Connect to the desired Tangle network by selecting the appropriate network from the left dropdown list. Note that liquid staking pools are only available on the networks in which they are created.
+- In case that the network that you're looking for is not listed on the dropdown list, input its RPC endpoint under the `DEVELOPMENT` → `custom endpoint` input.
 
-### Step 2: Create a Pool
+### Step 2: Check Pool Creation Requirements
+
+- In order to prevent spam, pool creation may require a minimum bond amount to be deposited. Ensure that you have enough funds in your account to cover this requirement.
+- These funds will not be forfeited; they will be bonded to the pool and will be returned to you when the pool is dissolved.
+
+![PolkadotJS UI: Check Min. Bond](../../images/liquid-staking/polkadotjs-check-min-create-bond.png)
+
+### Step 3: Create a Pool
 
 - Navigate to the **Extrinsics** tab on PolkadotJS.
 - Under the **Lst** section, select **Create Pool**.
 - Enter the required details such as:
-  - **Initial deposit amount**: The amount of tokens you are contributing to the pool.
-  - **Root account**: The account that will be responsible for managing the pool.
-  - **Nominator account**: The account that will nominate validators for the pool.
-  - **Bouncer account**: The account responsible for managing participant entries and exits.
+  - **Initial deposit amount**: The amount of tokens you are contributing to the pool. This serves as the initial deposit.
+  - **Root account address**: The account that will be responsible for managing the pool.
+  - **Nominator account address**: The account that will nominate validators for the pool.
+  - **Bouncer account address**: The account responsible for managing participant entries and exits.
   - **Pool Name**: Choose a unique and descriptive name for your pool.
 
-### Step 3: Configure Commission and Roles
+![PolkadotJS UI: Create Pool Extrinsic](../../images/liquid-staking/polkadotjs-create-pool.png)
+
+### Step 4: Configure Commission and Roles
 
 - Set the commission rate you wish to charge as the pool manager.
 - Assign roles (Root, Nominator, Bouncer) as appropriate for your pool’s structure.
 
-### Step 4: Confirm and Create
+### Step 5: Confirm and Create
 
 - Review the details carefully to ensure all information is correct.
-- Click **Submit** to create your liquid staking pool.
+- Click **Submit Transaction** to create your liquid staking pool.
