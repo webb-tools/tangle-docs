@@ -1,0 +1,93 @@
+---
+title: Cross-Chain Orchestration
+description: Cross-Chain Orchestration
+---
+
+# Overview
+
+Cross-Chain Restaking with Tangle introduces secure and reliable interactions
+across different blockchain ecosystems. Our system ensures that cross-chain actions — especially
+slashing — are executed seamlessly and consistently, regardless of the network on which they originate or occur.
+By enabling cross-chain slashing and communication, Tangle ensures that validators and protocols remain secure
+and accountable across a decentralized multi-chain environment.
+
+In this section, we will explore Tangle’s approach to Cross-Chain Restaking, focusing on how slashing events
+are managed across different networks and how we use cross-chain communication protocols to maintain trust and
+security between chains.
+
+## Cross-Chain Slashing Mechanism
+
+One of Tangle’s core innovations is the ability to enforce cross-chain slashing across multiple networks. This
+capability enhances security and reduces malicious behavior, as validators know that misbehavior on any network can have
+consequences across all networks they participate in.
+
+### Key Aspects of Cross-Chain Slashing:
+
+    - Slashing occurs on Tangle:
+        When a validator misbehaves on a third-party network, such as EigenLayer or Symbiotic, Tangle enforces the
+        slashing event. Regardless of which network is hosting the validator’s actions, slashing is performed on Tangle.
+        Similarly, slashing events that originate on Tangle can be forwarded to non-Tangle networks to be handled accordingly.
+        This centralized slashing mechanism ensures consistency and accountability.
+
+    - Slashing is Communicated Back to the Source Network:
+        After a slashing event is executed on Tangle, a message is dispatched back to the source protocol (EigenLayer,
+        Symbiotic, etc.), informing the network of the penalty. This ensures that validators and protocols are properly
+        updated across ecosystems, reflecting the consequence of any misbehavior in both the slashing network and the original protocol.
+
+## Cross-Chain Communication Protocols
+
+To ensure that slashing events and other cross-chain actions are communicated efficiently between networks, Tangle
+integrates several cross-chain communication protocols. These protocols are essential for message dispatching and help
+maintain synchronization between different blockchains.
+
+### Supported Protocols for Message Dispatching:
+
+    Bridges:
+        Bridges allow for secure and reliable cross-chain transfers of tokens, data, and messages. In the context of
+        Tangle, bridges serve as a critical infrastructure layer, enabling the delivery of slashing messages across networks.
+
+    Hyperlane:
+        Hyperlane is a protocol designed for general-purpose cross-chain messaging, which we use to facilitate secure
+        and efficient communication between Tangle and other networks. Hyperlane’s messaging layer helps Tangle dispatch slashing
+        messages quickly and with a high degree of trustlessness.
+
+    Sygma:
+        Sygma provides an additional layer of security for cross-chain message delivery. Tangle utilizes Sygma to ensure
+        that messages are delivered safely and that data remains intact throughout the cross-chain communication process.
+        Sygma’s focus on security helps us guarantee that slashing messages reach their destination reliably.
+
+## Workflow: How It Works
+
+Here’s an overview of how Tangle’s Cross-Chain Slashing operates:
+
+    1. Validator Misbehavior Detection:
+        A validator participating in both a Tangle Network and a non-Tangle network (e.g., EigenLayer, Symbiotic) is found guilty of some sort of misbehavior.
+
+    2. Slashing Event Triggered on Tangle:
+        Based on the infraction, a slashing event is initiated within the Tangle protocol. This is done by listening for relevant messages on said non-Tangle
+        network, then forwarding that to Tangle.
+
+    3. Message Dispatching:
+        After the slashing is executed, Tangle dispatches a message containing details of the slashing event back to the source network.
+        The message is transmitted using one of the supported cross-chain communication protocols (bridges, Hyperlane, Sygma).
+
+    4. Source Network Synchronization:
+        Upon receiving the message, the source network (e.g., EigenLayer) updates its own state to reflect the slashing event, ensuring consistency across chains.
+        This includes penalizing the validator within the original protocol, if necessary, and synchronizing with Tangle’s slashing record.
+
+## Why Cross-Chain Interoperability is Essential
+
+As decentralized finance and blockchain ecosystems continue to evolve, cross-chain interoperability becomes increasingly critical.
+Validators often operate on multiple networks simultaneously, which increases both the complexity and risk of misbehavior.
+With Tangle’s Cross-Chain Restaking functionalities, we provide the following benefits:
+
+    Universal Accountability:
+        Validators know that their actions on one network can lead to consequences across multiple chains, which deters malicious activity.
+
+    Security and Consistency:
+        Cross-chain slashing ensures that all protocols are kept in sync, enhancing security and trust across interconnected blockchain ecosystems.
+
+    Efficient and Reliable Communication:
+        By utilizing multiple communication protocols (Bridges, Hyperlane, Sygma), Tangle ensures that cross-chain messages are delivered efficiently and securely.
+
+For more information on development, please check out our relevant [Developer Section](../../developers/cross-chain/quickstart.mdx).

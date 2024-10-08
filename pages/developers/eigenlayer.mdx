@@ -1,0 +1,21 @@
+---
+title: EigenLayer Interoperability
+---
+
+# EigenLayer Interoperability
+
+EigenLayer-Tangle interoperability allows seamless interaction between the EigenLayer and Tangle blockchain networks. This document covers the integration using the Tangle AVS, the use of the `eigensdk-rs` SDK for building AVSs in Rust, and the interoperability features provided by the Tangle network's Gadgets and blueprints.
+
+## What is Tangle AVS?
+
+The Tangle AVS is an Actively Validated Service (AVS) for EigenLayer that encapsulates a Tangle validator and operator node within it. It allows the Tangle network to be validated through the EigenLayer infrastructure, creating a bridge between the two blockchain networks. This AVS is built using the `eigensdk-rs` SDK, a toolkit for developing AVSs in Rust.
+
+### Key Features of Tangle AVS
+
+- **Tangle Node Integration:** The Tangle AVS runs a fully operational Tangle Validator Node, enabling validation and interaction with the Tangle network directly from EigenLayer.
+- **Rust-Based Development:** Built using the `eigensdk-rs` SDK, ensuring performance, safety, and ease of development for Rust-based applications.
+- **Interoperability:** Seamless interoperability between Eigenlayer and Tangle networks, allowing assets, data, and functionality to be shared between them.
+
+## Building Tangle AVS with `eigensdk-rs`
+
+The `eigensdk-rs` SDK is a powerful toolkit for developing AVSs in Rust. It can be used for developing AVSs that run in Tangle or EigenLayer contexts. Below is a brief overview of how to use the SDK to build and deploy a Tangle AVS.

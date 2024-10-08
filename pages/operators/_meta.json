@@ -2,5 +2,6 @@
   "introduction": "Get Started",
   "node-basics": "Node Basics",
   "validator": "Running a Validator",
-  "monitoring": "Node Monitoring"
+  "monitoring": "Node Monitoring",
+  "tangle-avs": "Tangle AVS"
 }

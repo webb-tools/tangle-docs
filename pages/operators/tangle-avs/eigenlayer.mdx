@@ -1,0 +1,115 @@
+---
+title: Tangle EigenLayer AVS
+description: Integrating EigenLayer AVSs into Tangle
+---
+
+# Overview: Incorporating EigenLayer AVSs into Tangle
+
+We have built a powerful integration with EigenLayer through their Actively Validated Services (AVS).
+We have enabled the ability for Validators to extend their functionality across both Tangle and EigenLayer's Networks. Users and developers can
+leverage AVSs that operate simultaneously on both the EigenLayer and Tangle networks, creating new opportunities for
+cross-chain functionalities.
+
+This page provides an overview of how Tangle incorporates EigenLayer AVSs, including the creation of the Tangle AVS — an
+EigenLayer AVS that runs a Tangle Validator — as well as the tools we provide for building AVSs in Rust. By combining
+the strengths of EigenLayer’s decentralized security infrastructure with Tangle’s advanced validation and cross-chain
+capabilities, users can interact with both networks via a single AVS.
+
+## What is an EigenLayer AVS?
+
+An Actively Validated Service (AVS) in EigenLayer allows Operators to provide services beyond traditional staking,
+participating in security and decentralized services across multiple protocols.
+
+More information on AVSs can be found [here](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-developer-guide)
+
+### How AVS Integrates with Tangle
+
+Tangle takes the EigenLayer AVS model further by enabling validators to interact with both EigenLayer and Tangle at the
+same time. This dual-functionality AVS leverages EigenLayer's re-staking capabilities while engaging with Tangle's
+specialized cross-chain slashing, validator management, and orchestration features.
+
+## The Tangle AVS: Dual-Functionality with EigenLayer
+
+### What is the Tangle AVS?
+
+The Tangle AVS is an EigenLayer-compatible AVS that runs a Tangle Validator, allowing participants to interact with
+both the EigenLayer and Tangle networks through a single AVS. This unified AVS provides significant benefits for validators,
+offering enhanced cross-network functionality while maintaining security and scalability.
+
+### Key Features of the Tangle AVS:
+
+    1. Seamless EigenLayer and Tangle Integration:
+        The Tangle AVS is designed to fully integrate with EigenLayer’s re-staking mechanism, allowing validators to
+        increase security for both networks while re-staking assets. The AVS serves both EigenLayer and Tangle simultaneously,
+        optimizing cross-network interactions.
+
+    2. Dual-Network Participation:
+        Through the Tangle AVS, validators contribute to both Tangle's cross-chain slashing system and EigenLayer's
+        decentralized validation services. This means validators operate in both ecosystems, providing security to EigenLayer
+        protocols while benefiting from Tangle’s validator orchestration features.
+
+    3. Cross-Network Security Enforcement:
+        Validators using the Tangle AVS benefit from Tangle's cross-chain slashing and message dispatching, ensuring security
+        across all the protocols they are involved with. Misbehavior on one network results in penalties and updates across
+        both Tangle and EigenLayer, providing comprehensive validator accountability.
+
+    4. Unified Validator Management:
+        The Tangle AVS simplifies validator management, as users can run and manage their validators across both EigenLayer
+        and Tangle via a single AVS. This significantly reduces operational overhead, while allowing for robust cross-chain services.
+
+## Building AVSs in Rust: High-Performance Development Tools
+
+We offer support for building AVSs in Rust, a modern programming language known for its performance, safety, and scalability.
+Rust’s concurrency model makes it an excellent choice for developing Actively Validated Services that require high efficiency
+and cross-network interaction.
+
+### Why Choose Rust for AVS Development?
+
+Rust is an ideal language for AVS development because it ensures memory safety, prevents common bugs like data races, and
+can handle complex network interactions efficiently. When developing AVSs that run across both EigenLayer and Tangle, Rust
+provides the necessary performance and reliability required to support scalable validator operations.
+
+### Tools for Developing AVSs in Rust:
+
+    1. Rust-Based AVS Implementations:
+        At Tangle, we have developed EigenLayer’s Incredible Squaring AVS in Rust, which serves as a model for building
+        efficient AVSs. This implementation highlights the potential of Rust in delivering high-performance
+        Actively Validated Services that operate seamlessly across decentralized networks.
+
+    2. Custom AVS Development:
+        Developers can utilize our provided tools for creating their own AVSs in Rust. You can find the EigenSDK-RS
+        [here](https://github.com/webb-tools/eigensdk-rs). Whether you want to add custom logic or integrate unique services,
+        our Rust tools give developers the flexibility to innovate within the EigenLayer-Tangle ecosystem.
+
+## The Intersection of Tangle and EigenLayer: Unified AVS Functionality
+
+The integration between Tangle and EigenLayer through a single AVS offers a unique opportunity for validators to
+participate in both networks while leveraging the best features of each ecosystem. This cross-network functionality
+opens up new avenues for enhancing security, scaling decentralized services, and managing validator operations efficiently.
+
+### Advantages of a Unified AVS:
+
+    1. Cross-Network Validation and Security:
+        Validators using the Tangle AVS actively participate in EigenLayer’s re-staking mechanism, providing security
+        for EigenLayer protocols while engaging in Tangle’s cross-chain orchestration. This ensures that security
+        efforts extend across both networks, reducing risks and increasing validator accountability.
+
+    2. Efficient Resource Management:
+        By running a single AVS across EigenLayer and Tangle, validators can manage resources more efficiently. This
+        not only simplifies validator operations but also reduces the overhead of maintaining multiple services across
+        decentralized ecosystems.
+
+    3. Advanced Cross-Chain Slashing:
+        The Tangle AVS enables cross-chain slashing, ensuring that any misbehavior by validators is enforced across
+        both EigenLayer and Tangle. This cross-network enforcement deters malicious actions and upholds the integrity
+        of the validator system across multiple chains.
+
+    4. Developer Empowerment through Rust:
+        With the tools and blueprints provided for developing AVSs in Rust, developers can easily build custom services
+        and validators that take advantage of both EigenLayer’s and Tangle’s capabilities. This fosters innovation and
+        opens up new possibilities for integrating decentralized services.
+
+---
+
+For more details on getting started with the Tangle AVS or developing custom AVSs in Rust, please check out our
+[Developer Section](../../developers/blueprints.mdx). You can also find information on Blueprints [here](../../developers/blueprints.mdx).

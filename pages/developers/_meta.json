@@ -4,6 +4,7 @@
     "title": "Introduction"
   },
   "blueprints": "Blueprints",
+  "eigenlayer": "Eigenlayer Interoperability",
   "services": "Actively Validated Services (AVS)",
   "usecases": "Use Cases",
   "-- gadget-tutorial": {

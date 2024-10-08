@@ -1,0 +1,94 @@
+---
+title: Quickstart
+description: Setting up Tangle AVS with cross-chain functionalities.
+---
+
+import Callout from "../../../components/Callout";
+
+# Tangle AVS: Cross-Chain Quickstart Guide
+
+The following is a guide outlining the steps to set up and utilize **Tangle AVS** (Actively Validated Services),
+allowing you to run a Tangle Validator on **EigenLayer**'s network. If you do not have a Tangle node set up yet,
+please review the **How to run a Tangle node** setup guide [here](../node-basics/quickstart.mdx).
+
+This guide will help you get started with deploying the AVS and enabling cross-chain functionalities across multiple
+blockchain protocols, specifically EigenLayer.
+
+Here is how our final configuration will look at the end of this guide:
+
+- **Tangle AVS** operates as an EigenLayer-compatible validator and supports cross-chain slashing.
+- **EigenLayer** integration allows validators to re-stake and enhance security while also participating in Tangle’s
+  validator ecosystem.
+- **Symbiotic** will be integrated in the future, allowing cross-chain collaboration.
+- **Message dispatching** between networks using **bridges**, **Hyperlane**, or **Sygma**.
+- Optional **AVS and Blueprint Development tools in Rust** for developers who want to create their own AVSs or
+  Blueprints to interact with the Tangle and/or EigenLayer network(s).
+
+<Callout type="info">
+    Ensure that you have everything necessary for running a Tangle node and have access to the necessary network
+    configurations for EigenLayer or any other network you plan to connect to.
+</Callout>
+
+## Docker usage
+
+---- INCLUDES PLACEHOLDER TEXT ----
+
+The quickest way to set up the Tangle AVS with cross-chain functionalities is to use our provided scripts.
+
+### Prerequisites
+
+Before starting, ensure that the following is configured:
+
+- Access to a running **EigenLayer node** and correct port exposure for cross-network communication.
+- Set up necessary configurations for **bridges**, **Hyperlane**, or **Sygma** for message dispatching across networks.
+
+### Usage
+
+**To start the Tangle AVS, run:**
+
+```sh filename="compose up" copy
+cd avs-setup
+./placeholder_setup_script.sh
+```
+
+## Cross-Chain Functionality Configuration
+
+The Tangle AVS requires the registration of an Operator through both EigenLayer and Tangle - you must have the
+configurations for both Operators accessible. For more information on cross-chain functionalities you can see
+our [Cross-Chain Orchestration](cross-chain.mdx) section.
+
+### EigenLayer Integration
+
+    Ensure that the Tangle Validator is registered within the EigenLayer AVS and that the node is actively listening for cross-chain messages.
+    Set up cross-chain slashing to be enforced across both Tangle and EigenLayer by dispatching slashing messages via Hyperlane or another communication protocol.
+
+### Symbiotic Integration (Future)
+
+    [Placeholder] Symbiotic integration is under development. Once available, you will be able to configure cross-chain slashing and collaborative consensus mechanisms across both Tangle and Symbiotic.
+
+### Other Network Configurations
+
+    For non-Tangle networks, configure Hyperlane or Sygma to handle cross-chain message dispatching and validator state updates across networks.
+
+## Monitoring and Alerts
+
+To monitor your Tangle AVS and its interactions across networks like EigenLayer, set up Prometheus and Grafana for
+real-time tracking of your validator’s performance and cross-chain activities.
+
+```sh filename="compose up" copy
+cd monitoring
+docker compose up -d
+```
+
+Navigate to http://localhost:3000 to view real-time metrics such as:
+
+    Validator performance across EigenLayer and other networks.
+    Cross-chain message dispatch status.
+    Slashing events and validator health.
+
+## Next Steps
+
+You’ve successfully set up and configured your Tangle AVS with cross-chain functionalities! You can now participate in
+EigenLayer’s re-staking mechanism while benefiting from Tangle’s cross-chain validator management.
+
+Stay tuned for updates on Symbiotic and additional network integrations.
