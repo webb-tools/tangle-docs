@@ -1,3 +1,5 @@
+import ExpandableImage from "../../components/ExpandableImage";
+
 # Tangle's Uniqueness
 
 Tangle's multi-asset restaking infrastructure is built to be multi-chain and has notable differences between Eigenlayer and other restaking infrastructures. To start, Tangle has the notion of Blueprints, which are reusable specifications for AVSes. Developers on Tangle deploy Blueprints and users request service instances from these Blueprints. This fundamental difference allows developers to create and monetize services without having to operate the infrastructure for those services. It also puts a focus on reusable service infrastructures that can be deployed with different levels of security and decentralization. Our focus is to build the decentralized crypto cloud, for instanceable service infrastructure similar to what AWS provides for the average developer.
@@ -16,13 +18,13 @@ Below we show our diagram for Tangle, with a yellow bar indicating the shared se
 
 #### Eigenlayer but w/ Tangle Blueprints
 
-![Eigenlayer vs Tangle](/images/architecture/eigenlayer.png)
+<ExpandableImage src="/images/architecture/eigenlayer.png" alt="Eigenlayer vs Tangle" allowZoom={true}/>
 
 Next, we show Tangle's full architecture with multi-asset support and support for reusable Blueprint specifications. Note, the shared security pool overlaps all AVSes of each blueprint. In Tangle, it is also designed to enable AVS instances to self-select the assets they want backing their service. The end-user service requesters can configure an AVS to utilize fewer asset types than are available to them. This is Tangle's default behavior.
 
 #### Tangle
 
-![Tangle Architecture](/images/architecture/tangle.png)
+<ExpandableImage src="/images/architecture/tangle.png" alt="Tangle Architecture" allowZoom={true}/>
 
 ## Developer Focused
 

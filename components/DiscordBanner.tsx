@@ -1,6 +1,5 @@
 import React from "react";
 import DiscordButton from "./DiscordButton";
-import { ThemeSwitch } from "nextra-theme-docs";
 
 const DiscordBanner = () => {
   return (

@@ -4,7 +4,7 @@ import { TelegramIcon, TwitterIcon } from "./Icons";
 function Github() {
   return (
     <a
-      href="https://github.com/webb-tools/tangle"
+      href="https://github.com/tangle-network/tangle"
       className="hidden p-2 text-current sm:flex hover:opacity-75"
       title="Tangle GitHub repo"
       target="_blank"

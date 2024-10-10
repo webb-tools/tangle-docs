@@ -103,7 +103,7 @@ export const DappsAreaBridge = () => {
           description: "Monorepo for Webb dApps",
           name: "webb-dapp",
         }}
-        href="https://github.com/webb-tools/webb-dapp"
+        href="https://github.com/tangle-network/webb-dapp"
       ></DetailedFeatureLink>
     </div>
   );

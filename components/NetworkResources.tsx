@@ -70,8 +70,8 @@ const NETWORK_DATA = {
       property: "Runtime Types",
       value: {
         type: "link",
-        url: "https://www.npmjs.com/package/@webb-tools/tangle-substrate-types",
-        text: "@webb-tools/tangle-substrate-types",
+        url: "https://www.npmjs.com/package/@tangle-network/tangle-substrate-types",
+        text: "@tangle-network/tangle-substrate-types",
       },
     },
     {
@@ -86,7 +86,7 @@ const NETWORK_DATA = {
       property: "GitHub Repo",
       value: {
         type: "link",
-        url: "https://github.com/webb-tools/tangle",
+        url: "https://github.com/tangle-network/tangle",
         text: "Tangle Repository",
       },
     },
@@ -139,8 +139,8 @@ const NETWORK_DATA = {
       property: "Runtime Types",
       value: {
         type: "link",
-        url: "https://www.npmjs.com/package/@webb-tools/tangle-substrate-types",
-        text: "@webb-tools/tangle-substrate-types",
+        url: "https://www.npmjs.com/package/@tangle-network/tangle-substrate-types",
+        text: "@tangle-network/tangle-substrate-types",
       },
     },
     {
@@ -155,7 +155,7 @@ const NETWORK_DATA = {
       property: "GitHub Repo",
       value: {
         type: "link",
-        url: "https://github.com/webb-tools/tangle",
+        url: "https://github.com/tangle-network/tangle",
         text: "Tangle Repository",
       },
     },

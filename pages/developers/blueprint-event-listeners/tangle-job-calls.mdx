@@ -22,3 +22,26 @@ Tangle Job Call Listeners are particularly useful for tasks such as:
 - Implementing complex business logic that integrates with the Tangle network
 
 These listeners form a crucial part of Tangle's native job system, allowing blueprints to interact seamlessly with the broader Tangle ecosystem and respond to network events in real-time.
+
+# TangleEventListener
+
+The `TangleEventListener` is a type that listens to the Tangle network for events. This is a required type if you expect your application to use the tangle network to listen to jobs.
+
+The `TangleEventListener` is already implemented and ready to use. Simply register it in the `job` macro, and your application
+will automatically work with the Tangle network.
+
+```rust
+/// Returns x^2 saturating to [`u64::MAX`] if overflow occurs.
+#[job(
+    id = 0,
+    params(x),
+    result(_),
+    event_listener(TangleEventListener),
+    verifier(evm = "IncredibleSquaringBlueprint")
+)]
+pub fn xsquare(
+    x: u64,
+) -> Result<u64, Infallible> {
+    Ok(x.saturating_pow(2u32))
+}
+```

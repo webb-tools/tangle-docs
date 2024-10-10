@@ -11,7 +11,7 @@ export const RepoArea = () => {
           description: `A marketplace for on-demand, multi-party crypto infrastructure`,
           name: "Tangle Network Repo",
         }}
-        href="https://github.com/webb-tools/tangle"
+        href="https://github.com/tangle-network/tangle"
       />
       <DetailedFeatureLink
         feature={{
@@ -19,7 +19,7 @@ export const RepoArea = () => {
           description: `Documentation for the Tangle Network`,
           name: "Tangle Docs Repo",
         }}
-        href="https://github.com/webb-tools/tangle-docs"
+        href="https://github.com/tangle-network/tangle-docs"
       />
     </div>
   );
@@ -34,7 +34,7 @@ export const StatsdApp = () => {
           description: "Monorepo for Webb dApps",
           name: "webb-dapp",
         }}
-        href="https://github.com/webb-tools/webb-dapp"
+        href="https://github.com/tangle-network/webb-dapp"
       ></DetailedFeatureLink>
       <DetailedFeatureLink
         feature={{
@@ -50,7 +50,7 @@ export const StatsdApp = () => {
           description: "SubQuery implementation for DKG and Webb Networks",
           name: "webb-subql",
         }}
-        href="https://github.com/webb-tools/webb-subql"
+        href="https://github.com/tangle-network/webb-subql"
       ></DetailedFeatureLink>
     </div>
   );

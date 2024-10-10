@@ -30,14 +30,14 @@ sol!(
 
 ### 2. Job Definition with Event Handler
 
-Use the [`#[job]`](./blueprint-macros/jobs.mdx) macro to define a function that will handle specific events. Include the `event_handler` attribute to specify the event details:
+Use the [`#[job]`](./blueprint-macros/jobs.mdx) macro to define a function that will handle specific events. Include the `event_listener` attribute to specify the event details:
 
 ```rust
 #[job(
     id = 1,
     params(number_to_be_squared, task_created_block, quorum_numbers, quorum_threshold_percentage),
     result(_),
-    event_handler(
+    event_listener(
         instance = IncredibleSquaringTaskManager,
         event = IncredibleSquaringTaskManager::NewTaskCreated,
         event_converter = convert_event_to_inputs,

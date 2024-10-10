@@ -20,3 +20,91 @@ Periodic Listeners are particularly useful for tasks such as:
 - Scheduled maintenance operations
 - Periodic health checks
 - Automated reporting at set intervals
+
+### PeriodicEventListener
+
+Some programs may only be interested in checking for events at regular intervals. In this case, the `PeriodicEventListener` can be used to simplify the process.
+
+A `PeriodicEventListener` is a wrapper that takes 4 type parameters:
+
+- `MSEC`: The number of milliseconds between each event check.
+- `T`: The inner event listener type
+- `Event`: The event type
+- `Ctx`: The context type
+
+```rust
+pub struct PeriodicEventListener<const MSEC: usize, T, Event, Ctx>
+```
+
+We can make a `PeriodicEventListener` that ticks every 5000ms to check the status of a web server using [reqwest](crates.io/crates/reqwest).
+
+Start by defining our inner event listener (`T` = `WebPoller`, in this case)
+
+```rust
+use gadget_sdk::event_listener::periodic::PeriodicEventListener;
+
+/// Define an event listener that polls a webserver
+pub struct WebPoller {
+    pub client: reqwest::Client,
+}
+```
+
+Then, implement `EventListener` for `WebPoller`:
+
+```rust
+// We don't need a context here, so use ()
+pub type MyContext = ();
+
+impl EventListener<serde_json::Value, MyContext> for WebPoller {
+    /// Build the event listener. Note that this time, we don't necessarily need the context
+    async fn new(_context: &MyContext) -> Result<Self, Error>
+    where
+        Self: Sized,
+    {
+        let client = reqwest::Client::new();
+        Ok(Self { client })
+    }
+
+    /// Implement the logic that polls the web server
+    async fn next_event(&mut self) -> Option<serde_json::Value> {
+        // Send a GET request to the JSONPlaceholder API
+        let response = self.client
+            .get("https://jsonplaceholder.typicode.com/todos/1")
+            .send()
+            .await?;
+
+        // Check if the request was successful
+        if response.status().is_success() {
+            // Parse the JSON response
+            let resp: serde_json::Value = response.json().await?;
+            Some(resp)
+        } else {
+            None
+        }
+    }
+
+    /// Implement any handler logic when an event is received
+    async fn handle_event(&mut self, _event: serde_json::Value) -> Result<(), Error> {
+        Ok(())
+    }
+}
+```
+
+Finally, register the event listener inside the `job` macro using `event_listener`:
+
+```rust
+#[job(
+    id = 0,
+    params(x),
+    result(_),
+    event_listener(PeriodicEventListener::<6000, WebPoller, serde_json::Value, MyContext>), // <-- Register the event listener here
+    verifier(evm = "IncredibleSquaringBlueprint")
+)]
+pub fn hello_event_listener(
+    x: u64,
+    context: MyContext,
+    env: GadgetConfiguration<parking_lot::RawRwLock>,
+) -> Result<u64, Infallible> {
+    Ok(x.saturating_pow(2u32))
+}
+```

@@ -29,22 +29,22 @@ const navigation = {
   general: [
     {
       name: "Tangle Network Whitepaper",
-      href: "https://github.com/webb-tools/tangle/blob/main/Tangle_Network_Whitepaper_March282024.pdf",
+      href: "https://github.com/tangle-network/tangle/blob/main/Tangle_Network_Whitepaper_March282024.pdf",
     },
     // { name: "FAQ", href: "/faq" },
   ],
   source: [
     {
       name: "Webb.js API Tools",
-      href: "https://webb-tools.github.io/webb.js/",
+      href: "https://tangle-network.github.io/webb.js/",
     },
     {
       name: "Solidity",
-      href: "https://webb-tools.github.io/protocol-solidity/",
+      href: "https://tangle-network.github.io/protocol-solidity/",
     },
     {
       name: "Substrate",
-      href: "https://webb-tools.github.io/protocol-substrate/",
+      href: "https://tangle-network.github.io/protocol-substrate/",
     },
     //TODO: need source docs
     // { name: "ZK Gadgets", href: "/docs" },
@@ -63,7 +63,7 @@ const navigation = {
   community: [
     {
       name: "GitHub",
-      href: "https://github.com/webb-tools/tangle",
+      href: "https://github.com/tangle-network/tangle",
     },
     {
       name: "Telegram",

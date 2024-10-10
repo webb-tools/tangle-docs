@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://www.tangle.tools/">
-    <img src="https://github.com/webb-tools/tangle-docs/assets/38070512/12b7b949-89be-4c9d-9be1-2115d2ea15a2" alt="image" />
+    <img src="https://github.com/tangle-network/tangle-docs/assets/38070512/12b7b949-89be-4c9d-9be1-2115d2ea15a2" alt="image" />
   </a>
 </div>
 
@@ -52,7 +52,7 @@ navigation.
 
     ```bash
     # create a new folder to get going
-    git clone https://github.com/webb-tools/tangle-docs.git
+    git clone https://github.com/tangle-network/tangle-docs.git
     ```
 
 2.  **Install dependencies**

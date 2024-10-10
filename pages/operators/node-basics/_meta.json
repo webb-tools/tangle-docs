@@ -4,7 +4,6 @@
   "node-software": "Tangle Software",
   "systemd": "Deploy with systemd",
   "docker-node": "Deploy with Docker",
-  "monitoring": "Node Monitoring",
   "flags": "Flags",
   "troubleshooting": "Troubleshooting",
   "faq": "FAQs"

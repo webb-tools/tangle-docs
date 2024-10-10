@@ -77,7 +77,7 @@ const Head = () => {
 };
 
 const theme: DocsThemeConfig = {
-  docsRepositoryBase: "https://github.com/webb-tools/tangle-docs/tree/main",
+  docsRepositoryBase: "https://github.com/tangle-network/tangle-docs/tree/main",
   useNextSeoProps() {
     const { frontMatter } = useConfig();
 

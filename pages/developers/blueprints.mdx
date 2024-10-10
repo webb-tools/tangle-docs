@@ -1,15 +1,19 @@
 import { Callout } from 'nextra/components'
+import BlueprintIntroCards from "../../components/BlueprintIntroCards.tsx"
+import ExpandableImage from "../../components/ExpandableImage.tsx"
 
 # Blueprints
-
-<Callout type="info">Tangle is a networked infrastructure for creating and monetizing actively validated services through the deployment of Blueprints. [Read the introduction to the network.](/network/overview)</Callout>
 
 Blueprints are specifications for Actively Validated Services (AVS) on the Tangle Network. An AVS is an off-chain service that runs arbitrary computations for a user-specified period of time. A Blueprint is defined by:
 
 - An off-chain program binary (known as a Blueprint Gadget)
 - A set of smart contracts that provide programmability over the service's output verification and handling of malicious failures
 
-![Blueprint Ecosystem](/images/BlueprintEcosystem.png)
+<BlueprintIntroCards />
+
+### Blueprint and Service Instance Lifecycle
+
+<ExpandableImage src="/images/ServiceInstanceFlow.png" alt="Service Instance Flow" />
 
 Blueprints interact with the Tangle Network in several key ways:
 

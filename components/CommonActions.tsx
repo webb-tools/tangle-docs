@@ -23,7 +23,7 @@ const features = [
     Icon: FaGithub,
     title: "Tangle Open Source",
     description: `Multy-party threshold ECDSA (GG20) Substrate node`,
-    href: "https://github.com/webb-tools/tangle",
+    href: "https://github.com/tangle-network/tangle",
     action: "View the Repo",
   },
   {

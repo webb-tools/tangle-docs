@@ -7,15 +7,14 @@ title: Jobs Macro
 The goal with the job macro is to provide an easy and intuitive interface for creating a task based AVS service.
 
 Developers can specify jobs for their AVS to complete and streamline on-chain transaction submissions to protocols like
-Tangle or Eigenlayer. The system is flexible and allowing developers to listen to events from a variety of sources such
+Tangle or Eigenlayer. The system is flexible and allows developers to listen to events from a variety of sources such
 as Tangle's job submission/execution system, an EVM smart contract's events, periodic timers for cron-job like tasks,
-as well as a way to define custom event listeners.
+as well as custom event listeners.
 
 These job functions are triggered every time the respective event listener fires, and can be synchronous or asynchronous.
-Care should be taken if jobs are asynchronous and access shared state like databases or data from multiple blockchains.
 
 The jobs system is continuously being improved and the API may continue to change.
-We welcome you to share feature requests and PRs on [our github](https://github.com/webb-tools/gadget/issues).
+We welcome you to share feature requests and PRs on [our github](https://github.com/tangle-network/gadget/issues).
 
 ## The #[job] Macro
 

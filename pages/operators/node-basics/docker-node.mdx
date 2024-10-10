@@ -21,7 +21,7 @@ set their keys, fetch the applicable chainspec and run the start command to get 
 ```sh filename="pull" copy
 # Only use "main" if you know what you are doing, it will use the latest and maybe unstable version of the node.
 
-docker pull ghcr.io/webb-tools/tangle/tangle:main
+docker pull ghcr.io/tangle-network/tangle/tangle:main
 ```
 
 ### 2. Create a local directory to store the chain data:
@@ -43,7 +43,7 @@ mkdir /var/lib/tangle/
 To start the node run the following command:
 
 ```sh filename="docker run" copy
-docker run --rm -it -v /var/lib/tangle/:/data ghcr.io/webb-tools/tangle/tangle:main \
+docker run --rm -it -v /var/lib/tangle/:/data ghcr.io/tangle-network/tangle/tangle:main \
   --chain tangle-mainnet \
   --name="YOUR-NODE-NAME" \
   --base-path /data \
@@ -85,7 +85,7 @@ should paste your SURI when the command asks for it.
 ```sh filename="Acco" copy
 
 docker run --rm -it --platform linux/amd64 --network="host"  \
-ghcr.io/webb-tools/tangle/tangle:main \
+ghcr.io/tangle-network/tangle/tangle:main \
      key insert --base-path /var/lib/tangle/ \
     --chain tangle-mainnet \
     --scheme Sr25519 \
@@ -96,7 +96,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 
 ```sh filename="Babe" copy
 docker run --rm -it --platform linux/amd64 --network="host"  \
-ghcr.io/webb-tools/tangle/tangle:main \
+ghcr.io/tangle-network/tangle/tangle:main \
     key insert --base-path /var/lib/tangle/ \
     --chain tangle-mainnet \
     --scheme Sr25519 \
@@ -107,7 +107,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 
 ```sh filename="Imonline" copy
 docker run --rm -it --platform linux/amd64 --network="host"  \
-ghcr.io/webb-tools/tangle/tangle:main \
+ghcr.io/tangle-network/tangle/tangle:main \
     key insert --base-path /var/lib/tangle/ \
     --chain tangle-mainnet \
     --scheme Sr25519 \
@@ -118,7 +118,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 
 ```sh filename="Role" copy
 docker run --rm -it --platform linux/amd64 --network="host"  \
-ghcr.io/webb-tools/tangle/tangle:main \
+ghcr.io/tangle-network/tangle/tangle:main \
     tangle key insert --base-path /data \
     --chain tangle-mainnet \
     --scheme Ecdsa \
@@ -129,7 +129,7 @@ ghcr.io/webb-tools/tangle/tangle:main \
 
 ```sh filename="Grandpa" copy
 docker run --rm -it --platform linux/amd64 --network="host"  \
-ghcr.io/webb-tools/tangle/tangle:main \
+ghcr.io/tangle-network/tangle/tangle:main \
     tangle key insert --base-path /data \
     --chain tangle-mainnet \
     --scheme Ed25519 \
@@ -151,7 +151,7 @@ To start the node run the following command:
 
 ```sh filename="docker run" copy
 docker run --platform linux/amd64 --network="host" \
-ghcr.io/webb-tools/tangle/tangle:main \
+ghcr.io/tangle-network/tangle/tangle:main \
 --base-path=/data \
 --chain tangle-mainnet \
 --name="YOUR-NODE-NAME" \
@@ -233,10 +233,10 @@ The upgrade process is straightforward and is the same for a full node.
 sudo docker stop `CONTAINER_ID`
 ```
 
-2. Get the latest version of Tangle from the [Tangle GitHub Release](https://github.com/webb-tools/tangle/pkgs/container/tangle%2Ftangle)
+2. Get the latest version of Tangle from the [Tangle GitHub Release](https://github.com/tangle-network/tangle/pkgs/container/tangle%2Ftangle)
 
-3. Pull the latest version of Tangle binary by doing `docker pull ghcr.io/webb-tools/tangle/tangle:{VERSION_CODE}`.
-   Example, if the latest version of Tangle is v0.1.2, then the command would be `docker pull ghcr.io/webb-tools/tangle/tangle:v0.1.12`
+3. Pull the latest version of Tangle binary by doing `docker pull ghcr.io/tangle-network/tangle/tangle:{VERSION_CODE}`.
+   Example, if the latest version of Tangle is v0.1.2, then the command would be `docker pull ghcr.io/tangle-network/tangle/tangle:v0.1.12`
 
 4. Restart the tangle container and you should have the updated version of the client.
 
