@@ -34,8 +34,8 @@ const NETWORK_DATA = {
       property: "EVM Explorer",
       value: {
         type: "link",
-        url: "https://explorer.tangle.tools",
-        text: "explorer.tangle.tools",
+        url: "https://basescan.org",
+        text: "basescan.org",
       },
     },
     { property: "Asset Details", value: "" },

@@ -33,7 +33,7 @@ const client = new Sandbox({
   baseUrl: process.env.SANDBOX_BASE_URL ?? "https://sandbox.tangle.tools",
 });
 
-const box = await client.create({ image: "universal", name: "agent-smoke" });
+const box = await client.create({ environment: "universal", name: "agent-smoke" });
 
 try {
   const result = await box.exec("node --version && npm --version");
@@ -51,7 +51,7 @@ Each sandbox runs one coding harness. Choose it with `backend.type`. `opencode` 
 
 ```typescript
 const box = await client.create({
-  image: "universal",
+  environment: "universal",
   backend: { type: "opencode" },
 });
 

@@ -891,13 +891,7 @@ const TokenRow = memo(({ token }: { token: Token }) => (
       {token.isNative ? (
         "-"
       ) : (
-        <Link
-          href={`https://explorer.tangle.tools/address/${token.address}`}
-          target="_blank"
-          className="font-mono text-sm text-blue-600 dark:text-blue-400 hover:underline"
-        >
-          {token.address}
-        </Link>
+        <span className="font-mono text-sm">{token.address}</span>
       )}
     </TableCell>
   </TableRow>
