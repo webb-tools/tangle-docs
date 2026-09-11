@@ -30,7 +30,7 @@ Create a sandbox and get back a `SandboxInstance`. Common options:
 ```typescript
 const box = await client.create({
   name: "my-project",
-  image: "node:20",
+  environment: "node:20",
   backend: { type: "opencode" }, // coding harness; see supported harnesses below
   env: { NODE_ENV: "development" },
   resources: { cpuCores: 2, memoryMB: 4096, diskGB: 20 },
@@ -40,6 +40,9 @@ const box = await client.create({
   fromSandboxId: "sandbox_abc123", // the sandbox that owns the snapshot
 });
 ```
+
+`environment` accepts a named environment from `client.environments.list()`, a container image reference, or an SDK-built image ID.
+Omit it to use the server default.
 
 `backend.type` picks the coding harness. OpenCode is the default; Claude Code, Codex, and the other [supported harnesses](/infrastructure/harnesses) are selected the same way.
 
